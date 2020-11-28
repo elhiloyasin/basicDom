@@ -1,0 +1,99 @@
+<html>
+
+<head>
+   <title>project</title>
+</head>
+
+<style>
+  /* if the user clicks the first box the original width is 200px by manipulating the dom in javaScript I will increase the width to 500px */
+  /* if the user clicks secound box the first box and third box will change to the background color to those commented out */
+   #firstBox{
+      height: 200px;
+      width: 200px;
+      background-color:navy;
+      cursor: pointer;
+      /* width to 500px */
+      /* background-color: red; */
+      
+ 
+   }
+ 
+ #secondBox{
+    height: 200px;
+    width: 300px;
+    cursor: pointer;
+    background-color: yellow;
+  
+
+ 
+   }  
+
+ 
+  #thirdBox {
+   height: 200px;
+   width: 300px;
+   background-color:green;
+   cursor: pointer;
+   /* background-color:black; */
+    
+ 
+  } 
+ 
+ </style>
+<body>
+
+
+   
+<button id="firstBox"></button>
+<button id="secondBox"></button>
+<button id="thirdBox"></button>
+
+<div id= 'container'></div>
+
+
+
+</body>
+<script>
+
+let firstBox = document.getElementById('firstBox');
+let secondBox = document.getElementById('secondBox');
+let thirdBox = document.getElementById('thirdBox');
+let container = document.getElementById('container');
+let hOne = document.createElement('h1');
+
+
+firstBox.addEventListener('click', function(event){
+   event.preventDefault();
+   getFirstBox();
+});
+
+secondBox.addEventListener('click', function(event){
+   event.preventDefault();
+   getSecondBox();
+});
+
+thirdBox.addEventListener('click', function (event){
+   event.preventDefault();
+   getThirdBox();
+});
+
+
+function getFirstBox(){
+   firstBox.style.width = '500px';
+   
+}
+
+function getSecondBox(){
+   firstBox.style.backgroundColor = 'red';
+   thirdBox.style.backgroundColor = "black";
+}
+
+function getThirdBox(){
+   container.append(hOne)
+   hOne.innerHTML = 'YAZE WAS IN  CLASS LOL!!!!';
+   hOne.style.color = 'pink';
+
+}
+
+</script>
+</html>
